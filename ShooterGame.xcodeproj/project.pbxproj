@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		A9F3BF9D1DFB20BC00DDAC64 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9F3BF9A1DFB20BC00DDAC64 /* Enemy.cpp */; };
 		A9F3BF9E1DFB20BC00DDAC64 /* Ship.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9F3BF9C1DFB20BC00DDAC64 /* Ship.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
@@ -45,6 +44,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A94EBBE81DFB233B002C8600 /* Ship.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ship.hpp; sourceTree = "<group>"; };
 		A9F3BF9A1DFB20BC00DDAC64 /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
 		A9F3BF9B1DFB20BC00DDAC64 /* Enemy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Enemy.hpp; sourceTree = "<group>"; };
 		A9F3BF9C1DFB20BC00DDAC64 /* Ship.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ship.cpp; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-
+				A94EBBE81DFB233B002C8600 /* Ship.hpp */,
 				A9F3BF9A1DFB20BC00DDAC64 /* Enemy.cpp */,
 				A9F3BF9B1DFB20BC00DDAC64 /* Enemy.hpp */,
 				A9F3BF9C1DFB20BC00DDAC64 /* Ship.cpp */,
