@@ -23,10 +23,13 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
-    
+        // all of the game enemies
         vector<Enemy> enemies;
+    
+        // the player ship
         Ship ship;
     
+        // flag when you die
         bool gameOver;
     
         ofTrueTypeFont myfont;
