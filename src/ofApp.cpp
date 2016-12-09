@@ -55,7 +55,10 @@ void ofApp::update(){
     }
     
     // remove enemies
-    auto it = std::remove_if(enemies.begin(), enemies.end(), [this](Enemy enemy){return enemy.getX() < -30;});
+    auto it = std::remove_if(enemies.begin(), enemies.end(),
+                [this](Enemy const & enemy){
+                    return enemy.getX() < -30;
+                });
     enemies.erase(it, enemies.end());
     
 }
