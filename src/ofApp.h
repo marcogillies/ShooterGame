@@ -24,10 +24,10 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
     
         // all of the game enemies
-        vector<Enemy> enemies;
+        vector<Enemy *> enemies;
     
         // the player ship
-        Ship ship;
+        Ship *ship;
     
         // flag when you die
         bool gameOver;
