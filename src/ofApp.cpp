@@ -34,6 +34,13 @@ void ofApp::setup(){
 
 }
 
+void ofApp::exit(){
+    for (Enemy * enemy : enemies){
+        delete enemy;
+    }
+    delete ship;
+}
+
 //--------------------------------------------------------------
 void ofApp::update(){
     
@@ -62,7 +69,12 @@ void ofApp::update(){
 
     auto it = std::remove_if(enemies.begin(), enemies.end(),
                 [this](Enemy const * enemy){
-                    return enemy->getX() < -30;
+                    if( enemy->getX() < -30){
+                        delete enemy;
+                        return true;
+                    } else {
+                        return false;
+                    }
                 });
 
     enemies.erase(it, enemies.end());
