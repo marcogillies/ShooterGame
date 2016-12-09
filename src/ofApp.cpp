@@ -58,7 +58,6 @@ void ofApp::update(){
 
     if ( std::any_of(enemies.begin(), enemies.end(), [this](Enemy *enemy){
         return ofDist(enemy->getX(), enemy->getY(), ship->getX(), ship->getY()) < 60;}))
-
     {
         
         gameOver = true;
@@ -66,7 +65,6 @@ void ofApp::update(){
     }
     
     // remove enemies
-
     auto it = std::remove_if(enemies.begin(), enemies.end(),
                 [this](Enemy const * enemy){
                     if( enemy->getX() < -30){
@@ -76,6 +74,7 @@ void ofApp::update(){
                         return false;
                     }
                 });
+
 
     enemies.erase(it, enemies.end());
     
