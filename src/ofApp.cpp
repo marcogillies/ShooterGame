@@ -12,6 +12,8 @@ void ofApp::setup(){
     
     gameOver = false;
     
+    ship = new Ship();
+    
     // load in enemy positions from file
     std::ifstream myfile (ofToDataPath("positions.txt").c_str());
     
@@ -21,7 +23,7 @@ void ofApp::setup(){
     {
         while ( myfile >> x >> y)
         {
-            enemies.push_back(Enemy(x,y));
+            enemies.push_back(new Enemy(x,y));
         }
         myfile.close();
     } else {
@@ -38,16 +40,16 @@ void ofApp::update(){
     // move the enemies
     // note the use of a reference
     // so that we are changing the real enemy
-    for (auto & enemy : enemies){
-        enemy.move();
+    for (auto * enemy : enemies){
+        enemy->move();
     }
     
     
     // check if any of the enemies have
     // collided with the player ship
     // if so game over
-    if ( std::any_of(enemies.begin(), enemies.end(), [this](Enemy enemy){
-        return ofDist(enemy.x, enemy.y, ship.x, ship.y) < 60;}))
+    if ( std::any_of(enemies.begin(), enemies.end(), [this](Enemy *enemy){
+        return ofDist(enemy->x, enemy->y, ship->x, ship->y) < 60;}))
     {
         
         gameOver = true;
@@ -55,7 +57,8 @@ void ofApp::update(){
     }
     
     // remove enemies
-    auto it = std::remove_if(enemies.begin(), enemies.end(), [this](Enemy enemy){return enemy.x < -30;});
+    auto it = std::remove_if(enemies.begin(), enemies.end(), [this](Enemy *enemy){return enemy->x < -30;});
+    //for(
     enemies.erase(it, enemies.end());
     
 }
@@ -70,10 +73,10 @@ void ofApp::draw(){
     if(gameOver){
         myfont.drawString("gameover", 100,100);
     }else {
-        for (auto &enemy : enemies){
-            enemy.draw();
+        for (auto *enemy : enemies){
+            enemy->draw();
         }
-        ship.draw();
+        ship->draw();
     }
 }
 
@@ -81,10 +84,10 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
     // trigger ship movement
     if(key == OF_KEY_UP){
-        ship.up();
+        ship->up();
     }
     if(key == OF_KEY_DOWN){
-        ship.down();
+        ship->down();
     }
 }
 
