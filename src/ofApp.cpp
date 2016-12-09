@@ -47,7 +47,7 @@ void ofApp::update(){
     // collided with the player ship
     // if so game over
     if ( std::any_of(enemies.begin(), enemies.end(), [this](Enemy enemy){
-        return ofDist(enemy.x, enemy.y, ship.x, ship.y) < 60;}))
+        return ofDist(enemy.getX(), enemy.getY(), ship.getX(), ship.getY()) < 60;}))
     {
         
         gameOver = true;
@@ -55,7 +55,7 @@ void ofApp::update(){
     }
     
     // remove enemies
-    auto it = std::remove_if(enemies.begin(), enemies.end(), [this](Enemy enemy){return enemy.x < -30;});
+    auto it = std::remove_if(enemies.begin(), enemies.end(), [this](Enemy enemy){return enemy.getX() < -30;});
     enemies.erase(it, enemies.end());
     
 }

@@ -8,12 +8,15 @@
 
 #include "Ship.hpp"
 
-Ship::Ship(): x(50), y(10){
+// set x to a constant but
+// write some code to calcualate y and color
+Ship::Ship(): x(50){
     y = ofGetHeight()/2;
     // Set the initial color
     color.set( 255, 255, 255);
 }
 
+// draw the ship (very boring, just a circle)
 void Ship::draw(){
     ofSetColor(color);
     ofFill();
@@ -21,7 +24,9 @@ void Ship::draw(){
 }
 
 
-
+/*
+ * Move the ship (called when the keys are pressed)
+ */
 void Ship::up()
 {
     y -= 10;

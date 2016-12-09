@@ -16,20 +16,28 @@
 
 class Ship {
     
-public:
-    // Properties
+
+    // Postion and colour
     int x;
     int y;
     ofColor color;
 
+public:
+    
     // Constructor
     Ship();
     
     // Methods
     void draw();
     
+    // move the ship
+    // called when the keys are pressed
     void up();
     void down();
+    
+    //getters
+    int getX(){return x;};
+    int getY(){return y;};
     
 };
 

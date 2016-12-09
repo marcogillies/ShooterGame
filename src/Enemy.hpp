@@ -14,20 +14,22 @@
 
 class Enemy {
 
-public:
     // Properties
     int x;
     int y;
     ofColor color;
-
+    
+public:
+    
     // Constructor
-    Enemy(int _x, int _y);
-    
+    Enemy(int _x, int _y);    
     // Methods
-    void move();
-    void draw();
+    void move(); // move the enemy forward
+    void draw(); // draw the enemy
     
-
+    //getters
+    int getX(){return x;};
+    int getY(){return y;};
 
 };
 
